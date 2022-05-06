@@ -33,6 +33,8 @@ export const ResidentCertificateForm = (props) => {
     // setSubmitted(true);
     values.certificate_pdf_file = values.certificate_pdf_file[0];
 
+    console.log({ values });
+
     let formData = new FormData();
     for (let d in values) {
       formData.append(d, values[d]);
@@ -129,18 +131,23 @@ export const ResidentCertificateForm = (props) => {
 
         <Form.Group className="form-group">
           <FloatingLabel label="Purpose">
-            <Form.Control
-              type="text"
-              as="textarea"
-              style={{ height: "100px" }}
+            <Form.Select
               className={
-                Boolean(errors && errors.purpose?.type === "required")
+                Boolean(errors && errors.CivilStatus?.type === "required")
                   ? "border border-danger"
                   : ""
               }
-              onInput={(e) => setPurpose(e.target.value)}
               {...register("purpose", { ...requiredValidation })}
-            />
+            >
+              <option value="Personal Transactions">Personal Transactions</option>
+              <option value="Scholarship">Scholarship</option>
+              <option value="School Requirements">School Requirements</option>
+              <option value="Job Requirement">Job Requirement</option>
+              <option value="DSWD">DSWD</option>
+              <option value="SPES/GIP">SPES/GIP</option>
+              <option value="Yellow Card">Yellow Card</option>
+              <option value="Makatizen Card">Makatizen Card</option>
+            </Form.Select>
           </FloatingLabel>
 
           {Boolean(errors && errors.purpose?.type === "required") && (
@@ -200,8 +207,8 @@ export const ResidentCertificateForm = (props) => {
                   className="p-2"
                   disabled={Boolean(
                     selectedResident === "" ||
-                      selectedCertificateType === "" ||
-                      purpose === ""
+                    selectedCertificateType === "" ||
+                    purpose === ""
                   )}
                 >
                   Download Certificate
@@ -212,7 +219,7 @@ export const ResidentCertificateForm = (props) => {
         </div>
 
         <div className="d-flex justify-content-center">
-          <div ref={certificateTemplateRef} style={{ width: "65%", height: "1125px"}}>
+          <div ref={certificateTemplateRef} style={{ width: "65%", height: "1125px" }}>
             <BaseCertificateTemplate
               resident={selectedResident}
               type={selectedCertificateType}
