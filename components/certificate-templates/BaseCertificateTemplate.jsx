@@ -53,7 +53,7 @@ export const BaseCertificateTemplate = (props) => {
       case "indigency-certificate":
         return (
           <p>
-            This is to certify that {residentFullname} , {residentAge} years
+            This is to certify that {residentFullname}, {residentAge} years
             old, is a bona fide resident of Barangay Pitogo with postal address
             at {address_line1}.
             <br />
