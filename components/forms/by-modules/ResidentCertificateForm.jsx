@@ -18,6 +18,7 @@ export const ResidentCertificateForm = (props) => {
   } = useForm();
 
   const [selectedResident, setSelectedResident] = React.useState("");
+  const [selectedPurpose, setSelectedPurpose] = React.useState("");
   const [selectedCertificateType, setSelectedCertificateType] =
     React.useState("");
   const [certificateFilename, setCertificateFilename] = React.useState("");
@@ -131,13 +132,14 @@ export const ResidentCertificateForm = (props) => {
 
         <Form.Group className="form-group">
           <FloatingLabel label="Purpose">
-            <Form.Select
+            <Form.Select 
               className={
                 Boolean(errors && errors.CivilStatus?.type === "required")
                   ? "border border-danger"
                   : ""
               }
               {...register("purpose", { ...requiredValidation })}
+              onInput={(e) => setSelectedPurpose(e.target.value)}
             >
               <option value="Personal Transactions">Personal Transactions</option>
               <option value="Scholarship">Scholarship</option>
@@ -223,7 +225,7 @@ export const ResidentCertificateForm = (props) => {
             <BaseCertificateTemplate
               resident={selectedResident}
               type={selectedCertificateType}
-              purpose={purpose}
+              purpose={selectedPurpose}
             />
           </div>
         </div>

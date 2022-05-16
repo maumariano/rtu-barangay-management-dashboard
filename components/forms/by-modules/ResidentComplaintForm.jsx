@@ -32,7 +32,7 @@ export const ResidentComplaintForm = (props) => {
     formData.append("details", values.details);
     formData.append("date_of_event", values.date_of_event);
     formData.append("complainant", values.complainant);
-    formData.append("place_of_incident", values.placeOfIncident);
+    formData.append("place_of_incident", values.place_of_incident);
 
     if (file !== 0) {
       formData.append("evidence_file", file);

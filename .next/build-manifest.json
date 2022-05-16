@@ -25,35 +25,20 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/resident-certificate-requests": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/resident-certificate-requests.js"
-    ],
     "/resident-certificates": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
       "static/chunks/pages/resident-certificates.js"
-    ],
-    "/resident-certificates/new": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/resident-certificates/new.js"
     ],
     "/resident-complaints": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
       "static/chunks/pages/resident-complaints.js"
     ],
-    "/resident-records": [
+    "/resident-complaints/new": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/resident-records.js"
-    ],
-    "/resident-records/[resident_id]": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/resident-records/[resident_id].js"
+      "static/chunks/pages/resident-complaints/new.js"
     ]
   },
   "ampFirstPages": []

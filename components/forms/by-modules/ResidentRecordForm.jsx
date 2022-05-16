@@ -108,6 +108,7 @@ export const ResidentRecordForm = (props) => {
                       ? "border border-danger"
                       : ""
                   }
+                  defaultValue={resident?.gender || ""}
                   {...register("gender", { ...requiredValidation })}
                 >
                   <option value="Male">Male</option>
@@ -125,6 +126,7 @@ export const ResidentRecordForm = (props) => {
             <Form.Group className="form-group">
               <FloatingLabel label="Civil Status">
                 <Form.Select
+                  defaultValue={resident?.civil_status || ""}
                   className={
                     Boolean(errors && errors.CivilStatus?.type === "required")
                       ? "border border-danger"
@@ -354,6 +356,7 @@ export const ResidentRecordForm = (props) => {
           <Form.Group className="form-group">
               <FloatingLabel label="Category ID">
                 <Form.Select
+                  defaultValue={resident?.category_id || ""}
                   className={
                     Boolean(errors && errors.CategoryID?.type === "required")
                       ? "border border-danger"
